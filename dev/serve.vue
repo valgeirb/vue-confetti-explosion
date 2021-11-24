@@ -1,17 +1,25 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import ConfettiExplosion from '@/confetti-explosion.vue';
+import { defineComponent } from "vue";
+import ConfettiExplosion from "@/ConfettiExplosion.vue";
 
 export default defineComponent({
-  name: 'ServeDev',
+  name: "ServeDev",
   components: {
-    ConfettiExplosion
-  }
+    ConfettiExplosion,
+  },
 });
 </script>
 
 <template>
   <div id="app">
-    <confetti-explosion />
+    <ConfettiExplosion />
   </div>
 </template>
+
+<style>
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
