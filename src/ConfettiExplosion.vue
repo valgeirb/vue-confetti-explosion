@@ -84,8 +84,6 @@ export default {
       await waitFor(props.duration);
 
       if (props.shouldDestroyAfterDone) {
-        console.log("hmmmmmm");
-
         isVisible.value = false;
       }
     });
@@ -286,7 +284,7 @@ export default {
       );
 
       const setCSSVar = (key: string, val: string | number) =>
-        node.style.setProperty(key, val + "");
+        node?.style.setProperty(key, val + "");
 
       setCSSVar("--x-landing-point", `${landingPoint}px`);
 
@@ -344,7 +342,7 @@ export default {
       v-for="{ color, degree } in particles"
       :key="degree"
       class="particle"
-      :ref="(el) => setItemRef(el, degree)"
+      :ref="(el) => setItemRef(el as HTMLDivElement, degree)"
     >
       <div :style="`--bgcolor: ${color};`" />
     </div>
