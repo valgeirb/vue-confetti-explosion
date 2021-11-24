@@ -1,7 +1,25 @@
 {
   "name": "vue-confetti-explosion",
   "version": "1.0.0",
-  "description": "",
+  "description": "Confetti explosion in Vue 3 🎉🎊",
+  "author": {
+    "name": "Valgeir Björnsson",
+    "email": "valgeir@hey.com",
+    "url": "https://github.com/valgeirb"
+  },
+  "repository": "github:valgeirb/vue-confetti-explosion",
+  "keywords": [
+    "confetti",
+    "party",
+    "fun",
+    "badass",
+    "badassery",
+    "vue",
+    "vue3",
+    "small",
+    "tiny",
+    "performant"
+  ],
   "main": "dist/confetti-explosion.ssr.js",
   "browser": "dist/confetti-explosion.esm.js",
   "module": "dist/confetti-explosion.esm.js",
