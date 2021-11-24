@@ -1,23 +1,29 @@
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { nextTick, ref } from "vue";
 import ConfettiExplosion from "@/ConfettiExplosion.vue";
 
-export default defineComponent({
-  name: "ServeDev",
-  components: {
-    ConfettiExplosion,
-  },
-});
+const visible = ref(false);
+const explode = async () => {
+  visible.value = false;
+  await nextTick();
+  visible.value = true;
+};
 </script>
 
 <template>
   <div id="app">
-    <ConfettiExplosion />
+    <button @click="explode">Show confetti</button>
+    <ConfettiExplosion v-if="visible" />
   </div>
 </template>
 
 <style>
+html,
+body {
+  height: 100%;
+}
 #app {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
