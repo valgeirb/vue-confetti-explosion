@@ -1,6 +1,6 @@
 {
   "name": "vue-confetti-explosion",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/confetti-explosion.ssr.js",
   "browser": "dist/confetti-explosion.esm.js",
