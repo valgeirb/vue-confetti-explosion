@@ -342,7 +342,7 @@ export default {
       v-for="{ color, degree } in particles"
       :key="degree"
       class="particle"
-      :ref="(el) => setItemRef(el as HTMLDivElement, degree)"
+      :ref="(el) => setItemRef(el, degree)"
     >
       <div :style="`--bgcolor: ${color};`" />
     </div>
