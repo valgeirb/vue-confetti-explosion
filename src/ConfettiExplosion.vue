@@ -349,7 +349,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 @keyframes y-axis {
   to {
     transform: translate3d(0, var(--floor-height), 0);
