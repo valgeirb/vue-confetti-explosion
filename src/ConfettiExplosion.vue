@@ -335,7 +335,7 @@ export default {
 <template>
   <div
     v-if="isVisible && isValid"
-    class="container"
+    class="confetti-container"
     :style="`--floor-height: ${stageHeight}px;`"
   >
     <div
@@ -349,7 +349,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 @keyframes y-axis {
   to {
     transform: translate3d(0, var(--floor-height), 0);
@@ -365,7 +365,7 @@ export default {
     transform: rotate3d(var(--rotation), 360deg);
   }
 }
-.container {
+.confetti-container {
   width: 0;
   height: 0;
   overflow: visible;
@@ -373,11 +373,11 @@ export default {
   transform: translate3d(var(--x, 0), var(--y, 0), 0);
   z-index: 1200;
 }
-.particle {
+.confetti-container > .particle {
   animation: x-axis var(--duration-chaos) forwards
     cubic-bezier(var(--x1), var(--x2), var(--x3), var(--x4));
 }
-.particle div {
+.confetti-container > .particle div {
   position: absolute;
   top: 0;
   left: 0;
@@ -386,7 +386,7 @@ export default {
   width: var(--width);
   height: var(--height);
 }
-.particle div:before {
+.confetti-container > .particle div:before {
   display: block;
   height: 100%;
   width: 100%;
