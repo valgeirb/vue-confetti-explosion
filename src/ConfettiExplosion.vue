@@ -7,39 +7,26 @@ const CRAZY_PARTICLES_FREQUENCY = 0.1; // 0-1 frequency of crazy curvy unpredict
 const CRAZY_PARTICLE_CRAZINESS = 0.3; // 0-1 how crazy these crazy particles are
 const BEZIER_MEDIAN = 0.5; // utility for mid-point bezier curves, to ensure smooth motion paths
 
-const props = defineProps({
-  particleCount: {
-    type: Number,
-    default: 150,
-  },
-  particleSize: {
-    type: Number,
-    default: 12, // max height for particle rectangles, diameter for particle circles
-  },
-  duration: {
-    type: Number,
-    default: 3500,
-  },
-  colors: {
-    type: Array<string>,
-    default: ["#FFC700", "#FF0000", "#2E3191", "#41BBC7"],
-  },
-  force: {
-    type: Number,
-    default: 0.5, // 0-1 roughly the vertical force at which particles initially explode
-  },
-  stageHeight: {
-    type: Number,
-    default: 800, // pixels the particles will fall from initial explosion point
-  },
-  stageWidth: {
-    type: Number,
-    default: 1600, // horizontal spread of particles in pixels
-  },
-  shouldDestroyAfterDone: {
-    type: Boolean,
-    default: true,
-  },
+interface IConfettiProps {
+  particleCount: number,
+  particleSize: number,
+  duration: number,
+  colors: string[],
+  force: number,
+  stageHeight: number,
+  stageWidth: number,
+  shouldDestroyAfterDone: boolean,
+}
+
+const props = withDefaults(defineProps<IConfettiProps>(), {
+  particleCount: 150,
+  particleSize: 12,
+  duration: 3500,
+  colors: () => ["#FFC700", "#FF0000", "#2E3191", "#41BBC7"],
+  force: 0.5,
+  stageHeight: 800,
+  stageWidth: 1600,
+  shouldDestroyAfterDone: true,
 });
 
 const isVisible = ref(true);
